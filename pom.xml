@@ -136,8 +136,6 @@
                 </reportSets>
             </plugin>
         </plugins>
-
-
     </reporting>
 
 </project>
