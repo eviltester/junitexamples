@@ -77,6 +77,35 @@
                 <version>${maven-site-plugin.version}</version>
             </plugin>
 
+
+            <!-- add code coverage and make sure it covers both Junit4 and Junit5 -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <!-- defaults to target/jacoco.exec -->
+                <executions>
+                    <!-- allow Jacoco to run -->
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!--
+                        Generate the html report for the test phase
+                        https://www.eclemma.org/jacoco/trunk/doc/report-mojo.html
+                    -->
+                    <execution>
+                        <id>report</id>
+                        <!-- generate coverage report for test phase -->
+                        <!-- target/site/jacoco -->
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -92,7 +121,23 @@
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>${maven.surefire.report.version}</version>
             </plugin>
+
+            <!-- generate the coverage report using Jacoco -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
         </plugins>
+
+
     </reporting>
 
 </project>
