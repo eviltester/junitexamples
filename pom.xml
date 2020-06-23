@@ -17,7 +17,6 @@
 
         <!-- to generate html junit reports for test phase -->
         <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
-        <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
         <maven.surefire.report.version>3.0.0-M4</maven.surefire.report.version>
     </properties>
 
@@ -69,16 +68,6 @@
             </plugin>
 
             <!--
-                Maven Reports Plugin to generate the HTML reports
-                https://maven.apache.org/surefire/maven-surefire-report-plugin/index.html
-             -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${maven-project-info-reports-plugin.version}</version>
-            </plugin>
-
-            <!--
                 Maven Site Plugin to create the HTML site
                 https://maven.apache.org/surefire/maven-surefire-plugin/usage.html
              -->
@@ -88,13 +77,16 @@
                 <version>${maven-site-plugin.version}</version>
             </plugin>
 
-
         </plugins>
     </build>
 
     <!-- `mvn clean test site` to generate the junit html report-->
     <reporting>
         <plugins>
+            <!--
+                Maven Reports Plugin to generate the HTML reports
+                https://maven.apache.org/surefire/maven-surefire-report-plugin/index.html
+             -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
