@@ -96,7 +96,7 @@ And add maven surefire report plugin to the reporting section:
 
 ### Explanation Video
 
-[![Video Generation of JUnit HTML Report](http://img.youtube.com/vi/UYyPrZ76G3I/0.jpg)](http://www.youtube.com/watch?v=UYyPrZ76G3I "Generating a JUnit HTML Report")
+[![Video Generation of JUnit HTML Report](http://img.youtube.com/vi/aOWWq70-z5o/0.jpg)](http://www.youtube.com/watch?v=aOWWq70-z5o "Generating a JUnit HTML Report")
 
 
 ## Differences between Junit 4 and JUnit 5

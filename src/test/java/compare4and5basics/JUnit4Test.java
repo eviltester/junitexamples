@@ -3,6 +3,14 @@ package compare4and5basics;
 import org.junit.*;
 import java.io.IOException;
 
+/*
+
+Read about the basic differences between JUnit 4 and 5:
+
+- https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics
+- [here](https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics)
+
+*/
 public class JUnit4Test {
 
     @BeforeClass
