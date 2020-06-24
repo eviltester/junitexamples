@@ -1,5 +1,9 @@
 # Assertions
 
+This package doesn't explore all the assertion libraries fully.
+
+But it shows the basics to compare them.
+
 ## Java Built In Assertions
 
 Java has a built in assertion `assert`.

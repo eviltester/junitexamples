@@ -52,6 +52,35 @@
             <scope>test</scope>
         </dependency>
         -->
+
+        <!--
+            AssertJ - fluent assertion library
+
+            https://github.com/assertj
+            https://assertj.github.io/doc/
+        -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <!-- use 2.9.1 for Java 7 projects -->
+            <version>3.16.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
+            Truth - fluent assertion library
+
+            https://truth.dev/
+
+            Google assertion library built
+            around same time as AssertJ
+        -->
+        <dependency>
+            <groupId>com.google.truth</groupId>
+            <artifactId>truth</artifactId>
+            <version>1.0.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 
