@@ -2,8 +2,9 @@
 
 ## Explained
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hqbSjkQxGwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Video Explaining Basic Differences Between JUnit 4 and JUnit 5](http://img.youtube.com/vi/hqbSjkQxGwU/0.jpg)](http://www.youtube.com/watch?v=hqbSjkQxGwU "Summary of Basic Differences Between Junit 4 and JUnit 5")
 
+https://img.youtube.com/vi/hqbSjkQxGwU/0.jpg
 ## Summary Basic difference between JUnit 4 and JUnit 5
 
 Marking Tests as Ignored:
