@@ -2,6 +2,8 @@
 
 Some simple code to experiment with Junit 4 and 5.
 
+[![Build Status](https://travis-ci.org/eviltester/junitexperiments.svg?branch=master)](https://travis-ci.org/eviltester/junitexperiments)
+
 ## Junit 5 can support JUnit 4
 
 Rather than mix Junit 4 and JUnit 5
