@@ -1,6 +1,9 @@
+# https://docs.travis-ci.com/user/languages/java/
 language: java
 script: mvn clean test
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk7
+  - oraclejdk11
+  - openjdk8
+  - openjdk10
+  - openjdk11
