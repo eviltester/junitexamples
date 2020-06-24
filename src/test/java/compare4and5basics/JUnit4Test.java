@@ -4,16 +4,9 @@ import org.junit.*;
 import java.io.IOException;
 
 /**
-
 Read about the basic differences between JUnit 4 and 5:
 
-- https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics
-- [here](https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics)
-
 @see <a href="https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics">https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics</a>
-
-See <a href="https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics">https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics</a>
-
 */
 public class JUnit4Test {
 
