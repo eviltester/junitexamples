@@ -3,8 +3,6 @@ package assertions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
-import org.junit.jupiter.api.Assertions;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,4 +120,23 @@ public class Junit4AssertTest {
     public void failingTest(){
         Assert.fail(); // causes a test to fail
     }
+
+    /*
+        JUnit @Rule for exception testing was deprecated in v 4.13
+
+        https://github.com/junit-team/junit4/wiki/Exception-testing#expectedexception-rule
+
+        @Rule
+        public ExpectedException expected = ExpectedException.none();
+
+        @Test
+        public void failsWithException(){
+
+            expected.expect(RuntimeException.class);
+            expected.expectMessage("catch me");
+            throw new RuntimeException("catch me");
+        }
+
+     */
+
 }
