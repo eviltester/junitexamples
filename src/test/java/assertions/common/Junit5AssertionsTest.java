@@ -6,16 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
 public class Junit5AssertionsTest {
 
     // examples of JUnit 5 Assertions.
-
-    @Test
-    public void assertingWithAMessage(){
-        Assertions.assertTrue(true, "Messages are last argument in JUnit 5");
-    }
 
     @Test
     public void assertingTrueAndFalse() {
@@ -24,6 +17,11 @@ public class Junit5AssertionsTest {
 
         // assert that condition is false
         Assertions.assertFalse(false);
+    }
+
+    @Test
+    public void assertingWithAMessage(){
+        Assertions.assertTrue(true, "Messages are last argument in JUnit 5");
     }
 
     @Test
@@ -88,13 +86,19 @@ public class Junit5AssertionsTest {
     }
 
 
+
     @Test
     public void failingATest() {
-        Assertions.assertThrows(AssertionError.class, () -> {
+        try{
 
-            Assertions.fail(); // causes a test to fail
+            // fail immediately causes the test to fail
+            // the message is optional in JUnit 5
+            Assertions.fail("`fail` causes a test to fail");
 
-        });
+        }catch(AssertionError e){
+
+            Assertions.assertEquals("`fail` causes a test to fail", e.getMessage());
+        }
     }
 
     /*

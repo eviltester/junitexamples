@@ -2,20 +2,12 @@ package assertions.common;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.function.ThrowingRunnable;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.assertFalse;
 
 public class Junit4AssertTest {
 
     // examples of JUnit 4 Assert.
-
-    @Test
-    public void assertingWithAMessage(){
-        Assert.assertTrue("Messages are first argument in JUnit 4", true);
-    }
 
     @Test
     public void assertingTrueAndFalse() {
@@ -23,7 +15,12 @@ public class Junit4AssertTest {
         Assert.assertTrue(true);
 
         // assert that condition is false
-        assertFalse(false);
+        Assert.assertFalse(false);
+    }
+
+    @Test
+    public void assertingWithAMessage(){
+        Assert.assertTrue("Messages are first argument in JUnit 4", true);
     }
 
     @Test
@@ -88,8 +85,17 @@ public class Junit4AssertTest {
         Assert.assertNotSame(listOne, listTwo);
     }
 
-    @Test(expected = AssertionError.class)
-    public void failingATest(){
-        Assert.fail(); // causes a test to fail
+    @Test
+    public void failingATest() {
+        try{
+
+            // fail immediately causes the test to fail
+            // the message is optional in JUnit 4
+            Assert.fail("`fail` causes a test to fail");
+
+        }catch(AssertionError e){
+
+            Assert.assertEquals("`fail` causes a test to fail", e.getMessage());
+        }
     }
 }

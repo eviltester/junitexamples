@@ -110,11 +110,16 @@ public class AssertJAssertionsTest {
 
     @Test
     public void failingATest() {
-        Assertions.assertThatCode(() -> {
+        try{
 
+            // fail immediately causes the test to fail
+            // the message is mandatory in AssertJ
             Assertions.fail("`fail` causes a test to fail");
 
-        }).isInstanceOf(AssertionError.class);
+        }catch(AssertionError e){
+
+            assertThat(e).hasMessage("`fail` causes a test to fail");
+        }
     }
 
     /*

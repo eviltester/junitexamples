@@ -109,17 +109,17 @@ public class TruthAssertionsTest {
     }
 
 
-
     @Test
     public void failingATest() {
         try {
 
-            Truth.assert_().fail();
+            // fail immediately causes the test to fail
+            // the message is optional in Google Truth
+            Truth.assert_().withMessage("`fail` causes a test to fail").fail();
 
         }catch(AssertionError e){
-            /*
-                NOTE: this hints at another way to use Truth
-             */
+
+            assertThat(e).hasMessageThat().isEqualTo("`fail` causes a test to fail");
         };
     }
 
