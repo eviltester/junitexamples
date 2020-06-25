@@ -1,5 +1,5 @@
 - [x] travis
-- [] github actions
+- [x] github actions
 - [] parameterized tests
 - [] dynamic test naming
 - [] suites, tags filtering, etc.
