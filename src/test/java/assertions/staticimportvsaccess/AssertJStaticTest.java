@@ -10,7 +10,9 @@ public class AssertJStaticTest {
 
     @Test
     public void staticAccessVsStaticImport() {
+
         Assertions.assertThat(true).isTrue();
-        assertThat(false).isFalse();
+
+        assertThat(true).isTrue();
     }
 }

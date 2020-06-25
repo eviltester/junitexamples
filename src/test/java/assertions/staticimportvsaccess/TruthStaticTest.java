@@ -9,7 +9,9 @@ public class TruthStaticTest {
 
     @Test
     public void staticAccessVsStaticImport() {
+
         Truth.assertThat(true).isTrue();
-        assertThat(false).isFalse();
+
+        assertThat(true).isTrue();
     }
 }

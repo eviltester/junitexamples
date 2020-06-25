@@ -1,16 +1,16 @@
 package assertions.forexceptions;
 
-import com.google.common.truth.Truth;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-import static com.google.common.truth.Truth.assertThat;
-
-public class TruthExceptionsTest {
+public class HamcrestExceptionsTest {
 
     @Test
     public void assertingExceptions(){
 
-        // Google Truth does not have built in ways of asserting on exceptions
+        // Hamcrest does not have built in ways of asserting on exceptions
         // the recommendation is to use try/catch or the mechanism
         // provided by your Test Runner e.g. Junit 4 or Junit 5
         // pick one,
@@ -18,7 +18,7 @@ public class TruthExceptionsTest {
         try{
             throw new RuntimeException("catch me");
         }catch(RuntimeException e){
-            assertThat(e).hasMessageThat().isEqualTo("catch me");
+            assertThat(e.getMessage(), equalTo("catch me"));
         }
 
         // and see the JUnit 4 or JUnit 5 examples
@@ -33,15 +33,14 @@ public class TruthExceptionsTest {
                 throw new RuntimeException("catch me");
             }
 
-            // fail if exception was not thrown
-            Truth.assert_().withMessage("expected exception not thrown").fail();
+            // fail if exception was not thrown, using JUnit 5
+            Assertions.fail("expected exception not thrown");
 
 
         }catch(RuntimeException e){
 
             // assert on the exception details if required
-            assertThat(e.getMessage()).contains("catch me");
-            assertThat(e).hasMessageThat().contains("catch me");
+            assertThat(e.getMessage(), containsString("catch me"));
         }
     }
 }
