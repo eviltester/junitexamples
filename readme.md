@@ -1,6 +1,6 @@
-# JUnit Experiments
+# JUnit Examples
 
-Some simple code to experiment with Junit 4 and 5.
+Some simple code to show uses of and differences between Junit 4 and 5.
 
 [![Build Status](https://travis-ci.org/eviltester/junitexamples.svg?branch=master)](https://travis-ci.org/eviltester/junitexperiments)
 ![Java CI](https://github.com/eviltester/junitexamples/workflows/Java%20CI/badge.svg)

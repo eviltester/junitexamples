@@ -14,6 +14,7 @@ at this point have covered all the functionality I use in my WebDriver Courses
 
 at this point I have covered all the functionality I used throughout all my automating, ever.
 
+- [] static analysis in the maven build? spotbugs - https://spotbugs.github.io/
 - [] assumptions
 - [] differences in assertion reporting of failure messages
 - [] describe jvm params impact -DskipTests, run individual test
