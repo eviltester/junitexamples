@@ -1,0 +1,6 @@
+- [] parameterized tests
+- [] dynamic test naming
+- [] suites, tags filtering, etc.
+- [] assumptions
+- [] differences in assertion reporting
+- [] hamcrest
