@@ -18,6 +18,8 @@ public class InitialExample {
 
     // initial code based on my other projects
 
+    // todo: cover display name earlier in 'execution'? or separate test in parameterized.junit5?
+
     @ParameterizedTest
     // @ValueSource allows us to pass in an array of values e.g. strings, ints, longs, floats, etc.
     // but we can only pass in one argument to the test method
@@ -62,7 +64,7 @@ public class InitialExample {
 
 
     @ParameterizedTest(name = "using version {0} \"?v={0}\"")
-    @MethodSource("versions") // where is the data coming from
+    @MethodSource("versions") // specify the method name to use
     public void canPassInParamsToTest(int version){
 
         System.out.println("running test with param version = " + version);
