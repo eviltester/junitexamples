@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class InitialExample {
+public class InitialExampleTest {
 
     // https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
 

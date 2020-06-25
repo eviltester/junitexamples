@@ -7,7 +7,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- running with:
+
+ The suite can be run from the IDE.
+
+ running from maven with:
 
  ~~~~~~~~
  mvn test -Dtest=JUnit4TestSuiteConfig
@@ -15,10 +18,8 @@ import org.junit.runners.Suite;
 
  No longer seems to work for me.
 
- Worked fine on maven-surefire-plugin 2.14.1
+ Works fine on maven-surefire-plugin 2.14.1
  but does not work on version 3.0.0-M4
-
- The suite can be run from the IDE.
 
  May require additional surefire configuration.
 
