@@ -1,4 +1,4 @@
-package assertions;
+package assertions.common;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,12 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class Junit5AssertionsTest {
 
     // examples of JUnit 5 Assertions.
-
-    @Test
-    public void staticAccessVsStaticImport() {
-        Assertions.assertTrue(true);
-        assertFalse(false);
-    }
 
     @Test
     public void assertingWithAMessage(){
@@ -93,17 +87,9 @@ public class Junit5AssertionsTest {
         Assertions.assertNotSame(listOne, listTwo);
     }
 
-    @Test
-    public void assertingExceptions(){
-        // test exceptions with assertThrows
-        Exception e = Assertions.assertThrows(RuntimeException.class, () -> {
-            throw new RuntimeException("catch me");
-        });
-        Assertions.assertEquals("catch me", e.getMessage());
-    }
 
     @Test
-    public void failingTest() {
+    public void failingATest() {
         Assertions.assertThrows(AssertionError.class, () -> {
 
             Assertions.fail(); // causes a test to fail
@@ -113,10 +99,6 @@ public class Junit5AssertionsTest {
 
     /*
 
-        JUnit 5 also has:
-
-        Assertions.assertAll();
-        Assertions.assertDoesNotThrow();
         Assertions.assertIterableEquals();
         Assertions.assertLinesMatch();
         Assertions.assertTimeout();

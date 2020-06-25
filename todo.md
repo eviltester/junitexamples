@@ -1,5 +1,7 @@
 - [x] travis
 - [x] github actions
+- [] repackage to split out common assertions, exceptions etc
+- [] wrap fail method test with try catch instead of exception handligng
 - [] parameterized tests
 - [] dynamic test naming
 - [] suites, tags filtering, etc.

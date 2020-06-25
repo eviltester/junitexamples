@@ -1,41 +1,36 @@
-package assertions;
+package assertions.common;
 
-import org.assertj.core.api.Assertions;
-
+import com.google.common.truth.Truth;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
-
-public class AssertJAssertionsTest {
+public class TruthAssertionsTest {
 
     /*
-     Basic examples of AssertJ assertion usage.
+     Basic examples of Google Truth assertion usage.
 
-     Since AssertJ has a top level `assertThat`
-     factory method (and some others).
+     Like AssertJ, Truth also has a top level `assertThat`
+     factory method.
 
-     It seems to make code more fluent to statically
-     import the method `assertThat`
+     And a `assertWithMessage` for changing the method written out.
+
+     Both of these wrap `Truth.assert_()`
+
+     For general fluent code statically import the method `assertThat`
 
      e.g. `assertThat` rather than `Assertions.assertThat`
 
-     It is possible to write `Assertions.assertThat` but
+     It is possible to write `Truth.assertThat` but
      the code doesn't flow for readability as well.
 
-     Other, less used assertions, might be easier to use
-     with `Assertions.` then using code completion to
-     create the assertion.
-     */
+     Useful to compare Truth code with AssertJ code.
 
-    @Test
-    public void staticAccessVsStaticImport() {
-        Assertions.assertThat(true).isTrue();
-        assertThat(false).isFalse();
-    }
+     */
 
     @Test
     public void assertingTrueAndFalse() {
@@ -48,9 +43,11 @@ public class AssertJAssertionsTest {
 
     @Test
     public void assertingWithAMessage(){
-        assertThat(true).
-                isTrue().
-                withFailMessage("Messages are added fluently in AssertJ");
+        assertWithMessage("Messages are added as first arg in Truth").
+                that(true).isTrue();
+
+        Truth.assert_().withMessage("Messages are fluently with base chaining method").
+                that(true).isTrue();
     }
 
     @Test
@@ -60,7 +57,6 @@ public class AssertJAssertionsTest {
 
         // equality false assertion can take range of parameter types
         assertThat(true).isNotEqualTo(false);
-
 
         List aList = new ArrayList();
         aList.add("Bob");
@@ -74,13 +70,12 @@ public class AssertJAssertionsTest {
         listTwo.addAll(aList);
         assertThat(listOne).isEqualTo(listTwo);
 
-
         // asserting on arrays has a special `assertArrayEquals`
         // do not `assertEquals` on array
         int[] array1 = {1,2,3};
         int[] array2 = {1,2,3};
         assertThat(array1).isEqualTo(array2);
-        assertThat(array1).isNotSameAs(array2);
+        assertThat(array1).isNotSameInstanceAs(array2);
     }
 
     @Test
@@ -103,58 +98,40 @@ public class AssertJAssertionsTest {
         List myFirstList = new ArrayList();
         myFirstList.addAll(aList);
         List mySecondList = myFirstList;
-        assertThat(myFirstList).isSameAs(mySecondList);
+        assertThat(myFirstList).isSameInstanceAs(mySecondList);
 
         // assert that two object instances refer to different objects
         List listOne = new ArrayList();
         listOne.addAll(aList);
         List listTwo = new ArrayList();
         listTwo.addAll(aList);
-        assertThat(listOne).isNotSameAs(listTwo);
+        assertThat(listOne).isNotSameInstanceAs(listTwo);
     }
 
-    @Test
-    public void assertingExceptions(){
 
-        // AssertJ has a lot of different ways of handling exceptions
-        // pick one
-        Assertions.assertThatCode(() -> {
-            throw new RuntimeException("catch me");
-        }).isInstanceOf(RuntimeException.class).
-                hasMessage("catch me");
-
-        Assertions.assertThatThrownBy(() -> {
-            throw new RuntimeException("catch me");
-        }).isInstanceOf(RuntimeException.class).
-                hasMessage("catch me");
-
-        Assertions.assertThatExceptionOfType(
-                RuntimeException.class).isThrownBy(() -> {
-            throw new RuntimeException("catch me");
-        }).isInstanceOf(RuntimeException.class).
-                withMessage("catch me");
-    }
 
     @Test
-    public void failingTest() {
-        Assertions.assertThatCode(() -> {
+    public void failingATest() {
+        try {
 
-            Assertions.fail("`fail` causes a test to fail");
+            Truth.assert_().fail();
 
-        }).isInstanceOf(AssertionError.class);
+        }catch(AssertionError e){
+            /*
+                NOTE: this hints at another way to use Truth
+             */
+        };
     }
 
     /*
-        So much more to cover for AssertJ
+        So much more to cover for Truth.
 
-        But since it is a fluent interface is fairly easy to explore.
+        Has a slightly less expansive interface than AssertJ and designed
+        to handle lower versions of Java e.g. as found on some Android
+        devices.
 
-        `Assertions.` then see what top level methods there are.
-
-        Then fluently build up the assertion until you have what you need.
-
-        I think the fluent interface makes AssertJ easy to use, but you may not
-        need the flexibility that it brings.
+        May prove simpler to use, but since it is a fluent interface
+        is fairly easy to explore.
 
         Using an external assertion library might make it easier to switch between
         JUnit 4, Junit 5 or TestNG or any other test runner framework you want to use.

@@ -48,9 +48,17 @@ I used to statically import, but I found that statically accessing them was more
 
 Different teams use different coding standards. Personally I statically access. And I find it easier to teach people using this approach because code completion helps them learn.
 
-See `JavaSaticallyImportAssertsTest` for an example of statically importing.
+See `staticimportsvsaccess` package for an example of statically importing.
 
-In the examples I use static access, rather than import for readability.
+In the examples I use static access in JUnit 4 and JUnit 5 rather than import for:
+
+- readability
+- ease of code completion
+
+In Truth and AssertJ, I use static import again for readability and ease of code completion.
+
+The difference is that Truth and AssertJ are both fluent interfaces based around method chaining, whereas JUnit 4 and Junit 5 are single method calls.
+
 
 ## JUnit 5 Assertions
 
