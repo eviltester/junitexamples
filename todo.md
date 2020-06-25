@@ -14,3 +14,5 @@ at this point I have covered all the functionality I used throughout all my auto
 
 - [] assumptions
 - [] differences in assertion reporting
+- [] describe jvm params impact -DskipTests, run individual test
+
