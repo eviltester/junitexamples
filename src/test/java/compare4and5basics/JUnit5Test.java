@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
 Read about the basic differences between JUnit 4 and 5:
 
-@see <a href="https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics">https://github.com/eviltester/junitexperiments/tree/master/src/test/java/compare4and5basics</a>
+@see <a href="https://github.com/eviltester/junitexamples/tree/master/src/test/java/compare4and5basics">https://github.com/eviltester/junitexamples/tree/master/src/test/java/compare4and5basics</a>
 */
 // Can use @TestInstance(Lifecycle.PER_CLASS) if we want @BeforeAll and @AfterAll methods to NOT be static
 // @TestInstance(TestInstance.Lifecycle.PER_CLASS)
