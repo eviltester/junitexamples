@@ -22,7 +22,7 @@ import java.util.List;
  */
 
 @RunWith(Parameterized.class)
-public class InitialExampleTest {
+public class ParameterizedJunit4ExampleTest {
 
     private final int getversion;
     private final int checkversion;
@@ -46,7 +46,7 @@ public class InitialExampleTest {
         return args;
     }
 
-    public InitialExampleTest(int getversion, int checkversion){
+    public ParameterizedJunit4ExampleTest(int getversion, int checkversion){
         this.getversion = getversion;
         this.checkversion=checkversion;
     }
