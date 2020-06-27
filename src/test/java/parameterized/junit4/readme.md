@@ -14,3 +14,7 @@ In JUnit 4 to create a parameterized test we:
 ## Explanation Video
 
 [![Junit 4 Parameterized Test](http://img.youtube.com/vi/9KLtQdBSqJo/0.jpg)](http://www.youtube.com/watch?v=9KLtQdBSqJo)
+
+## Related Blog Post
+
+[Junit 4 Parameterized Tests](http://eviltester.com/post/junit/junit-4-parameterized-tests/)
