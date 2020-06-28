@@ -96,6 +96,11 @@ And add maven surefire report plugin to the reporting section:
     </reporting>
 ~~~~~~~~
 
+You can see an example of the generated report here:
+
+- [eviltester.github.io/junitexamples/site/index.html](https://eviltester.github.io/junitexamples/site/index.html)
+    - this would normally be found in your project as `target/site/index.html`
+
 ### Explanation Video
 
 [![Video Generation of JUnit HTML Report](http://img.youtube.com/vi/aOWWq70-z5o/0.jpg)](http://www.youtube.com/watch?v=aOWWq70-z5o "Generating a JUnit HTML Report")
