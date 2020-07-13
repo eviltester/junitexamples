@@ -47,3 +47,30 @@ Exception exception = Assertions.assertThrows(RuntimeException.class, () -> {
     throw new NullPointerException("We interrupt this test to throw an runtime exception");
 });
 ~~~~~~~~
+
+## Extra
+
+### Visibility
+
+JUnit 4 needs Test Classes and methods to have `public` visibility:
+
+~~~~~~~~
+public class JUnit4Test {
+    @Test
+    public void aTestMethodAssertingTrue(){
+        Assert.assertTrue(true);
+    }
+}
+~~~~~~~~
+
+JUnit 5 does not, so it may make sense to default to `package` visibility:
+
+~~~~~~~~
+class JUnit5Test {
+    @Test
+    void aTestMethodAssertingTrue(){
+        Assertions.assertTrue(true);
+    }
+}
+~~~~~~~~
+ 

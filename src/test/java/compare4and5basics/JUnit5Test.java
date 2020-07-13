@@ -11,7 +11,7 @@ Read about the basic differences between JUnit 4 and 5:
 */
 // Can use @TestInstance(Lifecycle.PER_CLASS) if we want @BeforeAll and @AfterAll methods to NOT be static
 // @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class JUnit5Test {
+class JUnit5Test {
 
     @BeforeAll
     public static void runsBeforeEverything(){
@@ -23,8 +23,10 @@ public class JUnit5Test {
         System.out.println("Running a Test Method");
     }
 
+    // Note: Junit 5 methods and classes do not have to be public
+    // using package level default access might make code tighter
     @Test
-    public void aTestMethodAssertingTrue(){
+    void aTestMethodAssertingTrue(){
         Assertions.assertTrue(true);
     }
 
